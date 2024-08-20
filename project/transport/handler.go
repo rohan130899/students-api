@@ -57,6 +57,7 @@ func NewHandler(service StudentService) *Handler {
 func (h *Handler) mapRoutes() {
 	h.Router.HandleFunc("/alive", h.AliveCheck).Methods("GET")
 	h.Router.HandleFunc("/ready", h.ReadyCheck).Methods("GET")
+	h.Router.HandleFunc("/authentication", h.Authenticate).Methods("GET")
 	h.Router.HandleFunc("/api/v1/students", JWTAuth(h.GetStudents)).Methods("GET")
 	h.Router.HandleFunc("/api/v1/student/{id}", JWTAuth(h.GetStudent)).Methods("GET")
 	h.Router.HandleFunc("/api/v1/student", JWTAuth(h.CreateStudent)).Methods("POST")

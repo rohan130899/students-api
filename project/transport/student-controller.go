@@ -41,6 +41,7 @@ func studetFromPostStudentRequest(u PostStudentRequest) student.Student {
 		Email:     u.Email,
 		Address:   u.Address,
 		Gender:    u.Gender,
+		CreatedBy: u.CreatedBy,
 		CreatedOn: u.CreatedOn,
 		UpdatedBy: u.UpdatedBy,
 		UpdatedOn: u.UpdatedOn,
